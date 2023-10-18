@@ -1,6 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../firebase/Providers/AuthProviders";
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
+    const handleLoginUser =(e)=>{
+        e. preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password, name, photo)
+        createUser(email, password)
+        .then(result => console.log(result.user))
+        .catch(error => console.error(error))
+    }
     return (
         <div>
             <div className="hero h-[90vh] container mx-auto flex justify-center lg:flex-row flex-col items-center">
@@ -11,7 +25,7 @@ const Register = () => {
                 <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100 px-7">
                 <h1 className="text-2xl font-bold mb-4 text-center pt-10">Please <span className="text-orange-500">Register now!</span></h1>
                 <p className="text-center"> laborum cum iure temporibus rerum. Totam, repellat voluptatem.</p>
-                <form className="card-body">
+                <form onSubmit={handleLoginUser} className="card-body">
                     <div className="flex gap-5 lg:flex-row flex-col">
                     <div className="form-control">
                     <label className="label">
