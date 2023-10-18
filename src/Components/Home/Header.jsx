@@ -1,9 +1,11 @@
-
+import Banner from "../Navber/Banner";
+import Footer from "../Navber/Footer";
 
 const Header = () => {
     return (
         <div>
-            this is headr
+            <Banner></Banner>
+            <Footer></Footer>
         </div>
     );
 };
