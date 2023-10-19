@@ -5,7 +5,7 @@ import Navber from "../Navber/Navber";
 const Home = () => {
     return (
         <div>
-            <div className="container mx-auto">
+            <div className="">
             <Navber></Navber>
             </div>
             

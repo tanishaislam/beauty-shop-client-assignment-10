@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../firebase/Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -21,6 +22,7 @@ const Login = () => {
         })
         .catch(error =>{
             console.error(error)
+            Swal(error.message)
             
         })
     }

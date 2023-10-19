@@ -9,7 +9,7 @@ const Services = () => {
     return (
         <div className='container mx-auto'>
             <h1 className="text-center font-bold text-5xl py-14">Our serviecs</h1>
-            <div className='grid grid-cols-3 gap-5 mb-20'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-20'>
                 <div className='text-center'>
                     <CiDeliveryTruck className='text-8xl bg-red-400 text-white p-4 rounded-2xl shadow-2xl shadow-red-500 my-5 m-auto'></CiDeliveryTruck>
                     <h2 className='text-3xl font-bold my-4 pt-3'>Food Delivery</h2>

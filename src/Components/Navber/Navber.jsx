@@ -17,7 +17,10 @@ const Navber = () => {
     </>
     return (
         <div>
-            <div className="navbar bg-base-100">
+             {
+                    user? <span className="font-semibold flex justify-center py-1 text-sm bg-red-300">{user.email}</span>: ''
+            }
+            <div className="navbar bg-base-100 container mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -42,7 +45,6 @@ const Navber = () => {
             {
                 user ? 
                 <>
-                <span className="font-semibold pr-5">{user.email}</span>
                 <button onClick={handleSignOut} className='bg-orange-500 text-white py-2 px-5 rounded-md font-semibold'>sign out</button></>
                 :
             
@@ -52,6 +54,7 @@ const Navber = () => {
             </div>
             
             </div>
+           
         </div>
     );
 };

@@ -11,6 +11,9 @@ import Login from './Components/LogReg/Login';
 import ErrorPage from './Components/Home/ErrorPage';
 import Register from './Components/LogReg/Register';
 import AuthProviders from './firebase/Providers/AuthProviders';
+import AddProduct from './Components/Product/AddProduct';
+import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes';
+import AllProducts from './Components/Product/AllProducts';
 
 const createMainRouter = createBrowserRouter([
   {
@@ -20,7 +23,12 @@ const createMainRouter = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Header></Header>
+        element: <Header></Header>,
+        loader: () => fetch('http://localhost:5000/products')
+      },
+      {
+        path: '/addProduct',
+        element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>
       },
       {
         path: '/login',
@@ -29,6 +37,10 @@ const createMainRouter = createBrowserRouter([
       {
         path: '/register',
         element:<Register></Register>
+      },
+      {
+        path:'/add',
+        element: <AllProducts></AllProducts>
       }
     ]
   },

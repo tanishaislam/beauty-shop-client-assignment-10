@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../firebase/Providers/AuthProviders";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser} = useContext(AuthContext);
+    const [passErr, setPassErr] = useState('');
     const handleLoginUser =(e)=>{
         e. preventDefault();
         const name = e.target.name.value;
@@ -11,6 +12,10 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password, name, photo)
+        if (!/^(?=.*[a-z])(?=.*[@$!%*#?&])[a-z\d@$!%*#?&]{6,}$/.test(password)) {
+            return  setPassErr('please write a valid password')
+              
+          }
         createUser(email, password)
         .then(result => console.log(result.user))
         .catch(error => console.error(error))
@@ -53,6 +58,9 @@ const Register = () => {
                     </label>
                     <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                     </div>
+                    {
+                        passErr? <p className="text-start text-red-500">{passErr}</p>: ''
+                    }
                     </div>
                     <div className="form-control mt-6">
                     <button className="btn btn-primary bg-gradient-to-r from-orange-600 to-yellow-300 text-white border-none">Login</button>
