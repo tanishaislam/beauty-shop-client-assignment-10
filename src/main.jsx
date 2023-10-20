@@ -14,6 +14,7 @@ import AuthProviders from './firebase/Providers/AuthProviders';
 import AddProduct from './Components/Product/AddProduct';
 import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes';
 import AllProducts from './Components/Product/AllProducts';
+import AddBrand from './Components/Product/AddBrand';
 
 const createMainRouter = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const createMainRouter = createBrowserRouter([
       {
         path:'/add',
         element: <AllProducts></AllProducts>
+      },
+      {
+        path:'/service/:brand',
+        element:<AddBrand></AddBrand>,
+        loader: () => fetch('http://localhost:5000/products')
       }
     ]
   },
