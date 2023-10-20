@@ -12,7 +12,7 @@ const AddProduct = () => {
         const rating = form.rating.value;
         const newProduct = {brand, category,imge,price,description,rating}
         console.log(newProduct)
-        fetch('http://localhost:5000/products',{
+        fetch('https://beauty-shop-server-4abhz8d42-evas-projects-a5c76b5d.vercel.app/products',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

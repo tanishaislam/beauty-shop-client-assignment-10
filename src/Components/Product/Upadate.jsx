@@ -16,7 +16,7 @@ const Upadate = () => {
         const rating = form.rating.value;
         const updateProduct = { category,imge,price,description,rating}
         console.log(updateProduct)
-        fetch(`http://localhost:5000/products/${_id}`,{
+        fetch(`https://beauty-shop-server-4abhz8d42-evas-projects-a5c76b5d.vercel.app/products/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

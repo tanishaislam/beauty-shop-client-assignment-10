@@ -27,7 +27,7 @@ const createMainRouter = createBrowserRouter([
       {
         path: '/',
         element: <Header></Header>,
-        loader: () => fetch('http://localhost:5000/products')
+        loader: () => fetch('https://beauty-shop-server-4abhz8d42-evas-projects-a5c76b5d.vercel.app/products')
       },
       {
         path: '/addProduct',
@@ -48,12 +48,12 @@ const createMainRouter = createBrowserRouter([
       {
         path:'/service/:brand',
         element:<AddBrand></AddBrand>,
-        loader: () => fetch('http://localhost:5000/products')
+        loader: () => fetch('https://beauty-shop-server-4abhz8d42-evas-projects-a5c76b5d.vercel.app/products')
       },
       {
         path:'/update/:id',
         element: <Upadate></Upadate>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({params}) => fetch(`https://beauty-shop-server-4abhz8d42-evas-projects-a5c76b5d.vercel.app/products/${params.id}`)
       },
       {
         path:'/myCart',

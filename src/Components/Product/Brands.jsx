@@ -3,24 +3,13 @@ import { Link } from "react-router-dom";
 
 const Brands = () => {
     const [users, setUsers]= useState([]);
-    // const [brandPro, setBrandPro]= useState('')
     useEffect(()=>{
-        fetch('http://localhost:5000/brand')
+        fetch('https://beauty-shop-server-4abhz8d42-evas-projects-a5c76b5d.vercel.app/brand')
         .then(res => res.json())
         .then(data => setUsers(data))
     },[])
 
-    
-        // const handleSub =(id)=>{
-        //     console.log(id)
-        //     fetch('http://localhost:5000/products')
-        //     .then(res => res.json())
-        //     .then(data=> {
-        //     setBrandPro(data)
-        //     })
-        //     const bran = brandPro.find(brandPro.brand === id)
-        //     console.log(bran)
-        // }
+
     return (
         <div className="">
              <div className="text-center pb-16 pt-5">
