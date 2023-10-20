@@ -15,6 +15,7 @@ import AddProduct from './Components/Product/AddProduct';
 import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes';
 import AllProducts from './Components/Product/AllProducts';
 import AddBrand from './Components/Product/AddBrand';
+import Upadate from './Components/Product/Upadate';
 
 const createMainRouter = createBrowserRouter([
   {
@@ -47,6 +48,11 @@ const createMainRouter = createBrowserRouter([
         path:'/service/:brand',
         element:<AddBrand></AddBrand>,
         loader: () => fetch('http://localhost:5000/products')
+      },
+      {
+        path:'/update/:id',
+        element: <Upadate></Upadate>,
+        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
       }
     ]
   },
