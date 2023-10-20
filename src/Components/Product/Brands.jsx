@@ -27,7 +27,7 @@ const Brands = () => {
                 <h1 className="text-4xl font-bold ">Product <span className="text-orange-500">Collection</span></h1>
                 <p className="text-lg font-semibold mt-4 w-1/2 m-auto"> consectetur adipisicing elit. Vero nam perferendis quis aliquid dolores hic dignissimos necessitatibus esse quia quo, facilis provident nobis.</p>
             </div>
-            <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid gap-14 px-5 container mx-auto">
+            <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid gap-14 px-5 container mx-auto ">
            
             {
                 users.map(user => <div key={user.id}>

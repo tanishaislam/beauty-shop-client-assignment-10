@@ -14,7 +14,7 @@ const AddBrand = () => {
     },[brand, viewServie])
     console.log(brandDetails)
     return (
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 container mx-auto gap-7 mt-20">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 container mx-auto gap-7 mt-20 px-5">
             {
                 brandDetails?.map(brandDetail=> <AllBrand key={brandDetail._id} brandDetail={brandDetail}></AllBrand>)
             }
